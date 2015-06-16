@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "Shibboleth:-Successful-Logins-[Dashboard]-Shibboleth:-Failed-Logins-[Dashboard]",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Shibboleth: Successful Logins - [Dashboard] Shibboleth: Failed Logins - [Dashboard]",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"Shibboleth:-Successful-Logins-[Data-Table:-Country-Name-and-Shib-Username]\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"Shibboleth:-Successful-Logins-[Data-Table:-Shib-Username-and-Source-IP]\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":4,\"col\":1,\"row\":5},{\"id\":\"Shibboleth:-Successful-Logins-[Tile-Map]\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":7,\"col\":1,\"row\":9},{\"id\":\"Shibboleth:-Successful-Logins-[Pie-Chart]\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":7,\"col\":1,\"row\":16}]",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  }
+]

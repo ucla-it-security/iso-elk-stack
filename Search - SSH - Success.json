@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "SSH:-Success-(Login-and-Logout)",
+    "_type": "search",
+    "_source": {
+      "title": "SSH: Success (Login and Logout)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "host",
+        "pam_username",
+        "geoip.country_name",
+        "src_ip",
+        "src_port",
+        "program",
+        "geoip.location",
+        "pam_message"
+      ],
+      "sort": [
+        "tags",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"[logstash-]YYYY.MM.DD\",\"query\":{\"query_string\":{\"query\":\"tags: \\\"ssh_successful_login\\\" tags: \\\"ssh_auth_success\\\" tags: \\\"ssh_accepted_publickey\\\" tags: \\\"ssh_session_opened\\\" tags: \\\"ssh_logout, ssh_disconnect\\\"\",\"analyze_wildcard\":true}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  }
+]
