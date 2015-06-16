@@ -140,6 +140,20 @@
     }
   },
   {
+    "_id": "System:-(1)-Created-and-Removed-Users-and-Groups;-(2)-Password-Change-[Visualization:-Data-Table]",
+    "_type": "visualization",
+    "_source": {
+      "title": "System: (1) Created and Removed Users and Groups; (2) Password Change - [Visualization: Data Table]",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"pam_username.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"pam_message.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "description": "",
+      "savedSearchId": "System:-(1)-Created-and-Removed-Users-and-Groups;-(2)-Password-Change",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
     "_id": "System:-(1)-Created-and-Removed-Users-and-Groups;-(2)-Password-Change-[Visualization:-Pie-Chart]",
     "_type": "visualization",
     "_source": {
@@ -154,13 +168,27 @@
     }
   },
   {
-    "_id": "System:-(1)-Created-and-Removed-Users-and-Groups;-(2)-Password-Change-[Visualization:-Data-Table]",
+    "_id": "SSH:-Failed-[Data-Table]",
     "_type": "visualization",
     "_source": {
-      "title": "System: (1) Created and Removed Users and Groups; (2) Password Change - [Visualization: Data Table]",
-      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"pam_username.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"pam_message.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "title": "SSH: Failed - [Data Table]",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"src_ip.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"host.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"geoip.country_name.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"username.raw\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "description": "",
-      "savedSearchId": "System:-(1)-Created-and-Removed-Users-and-Groups;-(2)-Password-Change",
+      "savedSearchId": "SSH:-Failed-Authentications",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "SSH:-Failed-[Tile-Map]",
+    "_type": "visualization",
+    "_source": {
+      "title": "SSH: Failed - [Tile Map]",
+      "visState": "{\"type\":\"tile_map\",\"params\":{\"mapType\":\"Heatmap\",\"isDesaturated\":true,\"heatMaxZoom\":\"18\",\"heatMinOpacity\":\"0.55\",\"heatRadius\":\"32\",\"heatBlur\":\"18\",\"heatNormalizeData\":true,\"addTooltip\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geoip.location\",\"autoPrecision\":false,\"mapZoom\":3,\"mapCenter\":[21.69826549685252,61.34765625],\"precision\":7}}],\"listeners\":{}}",
+      "description": "",
+      "savedSearchId": "SSH:-Failed-Authentications",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
