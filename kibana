@@ -21,7 +21,7 @@ do_start()      {
                         $DAEMON $DAEMON_ARGS 1>"$LOG" 2>&1 &
                         echo $! > "$PIDFILE"
                         PID=$!
-                        if [ "$PID" > 0 ]
+                        if [ "$PID" -ne "0" ]
                         then
                                 echo "Kibana started with pid $!"
                         else
