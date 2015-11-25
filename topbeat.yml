@@ -1,0 +1,69 @@
+################### Topbeat Configuration Example #########################
+
+############################# Input ############################################
+input:
+ # In seconds, defines how often to read server statistics
+ period: 10
+
+ # Regular expression to match the processes that are monitored
+ # By default, all the processes are monitored
+ procs: [".*"]
+
+
+############################# Output ##########################################
+
+output:
+  logstash:
+    enabled: true
+
+    # The list of downstream Logstash servers. 
+    hosts:
+      - 169.232.194.74:5045
+
+    tls: 
+      # The path to your client ssl certificate
+      certificate: /etc/filebeat/logstash-beats.crt
+      # The path to your client ssl key
+      certificate_key: /etc/filebeat/logstash-beats.key
+
+      # The path to your trusted ssl CA file. This is used
+      # to authenticate your downstream server.
+      certificate_authorities:
+        -  /etc/filebeat/logstash-beats.crt
+
+      # Network timeout in seconds.
+      timeout: 15
+
+############################# Shipper #########################################
+
+shipper:
+  # The name of the shipper that publishes the network data. It can be used to group
+  # all the transactions sent by a single shipper in the web interface.
+  # If this options is not defined, the hostname is used.
+  #name:
+
+  # The tags of the shipper are included in their own field with each
+  # transaction published. Tags make it easy to group servers by different
+  # logical properties.
+  tags: ["topbeat_eye.iso.ucla.edu"]
+
+  # Uncomment the following if you want to ignore transactions created
+  # by the server on which the shipper is installed. This option is useful
+  # to remove duplicates if shippers are installed on multiple servers.
+  #ignore_outgoing: true
+
+############################# Shipper #########################################
+
+logging:
+  # enable file rotation with default configuration
+  to_files: true
+
+  # do not log to syslog
+  to_syslog: false
+
+  files:
+    path: /var/log/topbeat/
+    name: topbeat.log
+    keepfiles: 7
+      
+
