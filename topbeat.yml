@@ -18,7 +18,7 @@ output:
 
     # The list of downstream Logstash servers. 
     hosts:
-      - 169.232.194.74:5045
+      - your_elk_host_ip:5045
 
     tls: 
       # The path to your client ssl certificate
