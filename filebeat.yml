@@ -187,7 +187,7 @@ prospectors:
 
 # Configure what outputs to use when sending the data collected by the beat.
 # Multiple outputs may be used.
-#output:
+output:
 
   ### Elasticsearch as output
   #elasticsearch:
@@ -268,14 +268,12 @@ prospectors:
 
 
   ### Logstash as output
-  
-  output:
   logstash:
     enabled: true
 
     # The list of downstream Logstash servers. 
     hosts:
-      - your_elk_host_ip:5043 
+      - 169.232.194.74:5043 
 
     tls: 
       # The path to your client ssl certificate
