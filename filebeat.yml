@@ -3,14 +3,52 @@
 ############################# Filebeat ######################################
 filebeat:
   # List of prospectors to fetch data.
-  
-    # Each - is a prospector. Below are the prospector specific configurations
-      # Paths that should be crawled and fetched. Glob based paths.
-      # To fetch all ".log" files from a specific level of subdirectories
-      # /var/log/*/*.log can be used.
-      # For each file found under this path, a harvester is started.
-      # Make sure not file is defined twice as this can lead to unexpected behaviour.
-      # - c:\programdata\elasticsearch\logs\*
+  prospectors:
+    # Each - section denotes a prospector. Note how wildcards are in double quotes, but single files with absolute paths without wildcards are not
+    #NOTE: do not use tabs. YAML format does not permit tabs. Use spaces instead. Tab usage will result in an error message: "YAML config parsing failed on /etc/filebeat/filebeat.yml: yaml: line 4: found character that cannot start any token. Exiting."
+    -
+      paths:
+        - /var/log/secure
+      fields:
+        log_type: syslog
+    -
+      paths:
+        - /etc/hosts.deny
+        - /var/log/denyhosts
+      fields:
+        log_type: deny-hosts
+    -
+      paths:
+        - /var/log/httpd/ssl_access_log
+        - /var/log/httpd/apache-access
+      fields:
+        log_type: apache-access
+    -
+      paths:
+        - /var/log/httpd/error_log
+      fields:
+        log_type: apache-error
+    -
+      paths:
+        - /var/log/mysql/mysql-error.log
+      fields:
+        log_type: mysql-error
+    -
+      paths:
+        - /var/log/mysql/mysql-slow.log
+      fields:
+        log_type: mysql-slow
+    -
+      paths:
+        - /var/log/logshipper.log
+        - /var/log/logshipper2.log
+      fields:
+        log_type: shib_logshipper
+    -
+      paths:
+        - /var/log/yum.log
+      fields:
+        log_type: yum
 
       # Configure the file encoding for reading files with international characters
       # following the W3C recommendation for HTML5 (http://www.w3.org/TR/encoding).
@@ -25,6 +63,7 @@ filebeat:
       # Possible options are:
       # * log: Reads every line of the log file (default)
       # * stdin: Reads the standard in
+      input_type: log
 
       # Optional additional fields. These field can be freely picked
       # to add additional information to the crawled log files for filtering
@@ -111,53 +150,6 @@ filebeat:
     #  paths:
     #    - "-"
 
-prospectors:
-    # Each - section denotes a prospector. Note how wildcards are in double quotes, but single files with absolute paths without wildcards are not
-    #NOTE: do not use tabs. YAML format does not permit tabs. Use spaces instead. Tab usage will result in an error message: "YAML config parsing failed on /etc/filebeat/filebeat.yml: yaml: line 4: found character that cannot start any token. Exiting."
-    -
-      paths:
-        - /var/log/secure
-      fields:
-        log_type: syslog
-    -
-      paths:
-        - /etc/hosts.deny
-        - /var/log/denyhosts
-      fields:
-        log_type: deny-hosts
-    -
-      paths:
-        - /var/log/httpd/ssl_access_log
-        - /var/log/httpd/apache-access
-      fields:
-        log_type: apache-access
-    -
-      paths:
-        - /var/log/httpd/error_log
-      fields:
-        log_type: apache-error
-    -
-      paths:
-        - /var/log/mysql/mysql-error.log
-      fields:
-        log_type: mysql-error
-    -
-      paths:
-        - /var/log/mysql/mysql-slow.log
-      fields:
-        log_type: mysql-slow
-    -
-      paths:
-        - /var/log/logshipper.log
-        - /var/log/logshipper2.log
-      fields:
-        log_type: shib_logshipper
-    -
-      paths:
-        - /var/log/yum.log
-      fields:
-        log_type: yum
-        
   # General filebeat configuration options
   #
   # Event count spool threshold - forces network flush if exceeded
@@ -170,7 +162,7 @@ prospectors:
   # Name of the registry file. Per default it is put in the current working
   # directory. In case the working directory is changed after when running
   # filebeat again, indexing starts from the beginning again.
-  #registry_file: /var/lib/filebeat/registry
+  #registry_file: .filebeat
 
   # Full Path to directory with additional prospector configuration files. Each file must end with .yml
   # These config files must have the full filebeat config part inside, but only
@@ -269,27 +261,9 @@ output:
 
   ### Logstash as output
   logstash:
-    enabled: true
+    # The Logstash hosts
+    hosts: ["169.232.194.74:5043"]
 
-    # The list of downstream Logstash servers. 
-    hosts:
-      - 169.232.194.74:5043 
-
-    tls: 
-      # The path to your client ssl certificate
-      certificate: /etc/filebeat/logstash-beats.crt
-      # The path to your client ssl key
-      certificate_key: /etc/filebeat/logstash-beats.key
-
-      # The path to your trusted ssl CA file. This is used
-      # to authenticate your downstream server.
-      certificate_authorities:
-        -  /etc/filebeat/logstash-beats.crt
-
-      # Network timeout in seconds.
-      timeout: 15
-      
-  #logstash (additional options): 
     # Number of workers per Logstash host.
     #worker: 1
 
@@ -302,15 +276,16 @@ output:
     #index: filebeat
 
     # Optional TLS. By default is off.
-    #tls:
+    tls:
+    
       # List of root certificates for HTTPS server verifications
-      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      certificate_authorities: ["/etc/filebeat/logstash-beats.crt"]
 
       # Certificate for TLS client authentication
-      #certificate: "/etc/pki/client/cert.pem"
+      certificate: "/etc/filebeat/logstash-beats.crt"
 
       # Client Certificate Key
-      #certificate_key: "/etc/pki/client/cert.key"
+      certificate_key: "/etc/filebeat/logstash-beats.key"
 
       # Controls whether the client verifies server certificates and host name.
       # If insecure is set to true, all server host names and certificates will be
@@ -360,7 +335,7 @@ shipper:
   # The tags of the shipper are included in their own field with each
   # transaction published. Tags make it easy to group servers by different
   # logical properties.
-  tags: ["filebeat_eye.iso.ucla.edu"]
+  #tags: ["service-X", "web-tier"]
 
   # Uncomment the following if you want to ignore transactions created
   # by the server on which the shipper is installed. This option is useful
@@ -402,7 +377,7 @@ logging:
   # To enable logging to files, to_files option has to be set to true
   files:
     # The directory where the log files will written to.
-    path: /var/log/filebeat/
+    path: /var/log/mybeat
 
     # The name of the files where the logs are written to.
     name: filebeat
@@ -422,3 +397,4 @@ logging:
   # Sets log level. The default log level is error.
   # Available log levels are: critical, error, warning, info, debug
   #level: error
+
