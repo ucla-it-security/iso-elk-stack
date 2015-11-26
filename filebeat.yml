@@ -187,7 +187,7 @@ prospectors:
 
 # Configure what outputs to use when sending the data collected by the beat.
 # Multiple outputs may be used.
-output:
+#output:
 
   ### Elasticsearch as output
   #elasticsearch:
