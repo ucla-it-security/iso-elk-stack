@@ -4,9 +4,13 @@
 filebeat:
   # List of prospectors to fetch data.
   prospectors:
-    # Each - section denotes a prospector. Note how wildcards are in double quotes, but single files with absolute paths without wildcards are not
-    #NOTE: do not use tabs. YAML format does not permit tabs. Use spaces instead. Tab usage will result in an error message: "YAML config parsing failed on /etc/filebeat/filebeat.yml: yaml: line 4: found character that cannot start any token. Exiting."
+    # Each - is a prospector. Below are the prospector specific configurations
     -
+      # Paths that should be crawled and fetched. Glob based paths.
+      # To fetch all ".log" files from a specific level of subdirectories
+      # /var/log/*/*.log can be used.
+      # For each file found under this path, a harvester is started.
+      # Make sure not file is defined twice as this can lead to unexpected behaviour.
       paths:
         - /var/log/secure
       fields:
@@ -277,7 +281,6 @@ output:
 
     # Optional TLS. By default is off.
     tls:
-    
       # List of root certificates for HTTPS server verifications
       certificate_authorities: ["/etc/filebeat/logstash-beats.crt"]
 
@@ -335,7 +338,7 @@ shipper:
   # The tags of the shipper are included in their own field with each
   # transaction published. Tags make it easy to group servers by different
   # logical properties.
-  #tags: ["service-X", "web-tier"]
+  tags: ["filebeat_eye.iso.ucla.edu"]
 
   # Uncomment the following if you want to ignore transactions created
   # by the server on which the shipper is installed. This option is useful
@@ -377,7 +380,7 @@ logging:
   # To enable logging to files, to_files option has to be set to true
   files:
     # The directory where the log files will written to.
-    path: /var/log/mybeat
+    path: /var/log/filebeat
 
     # The name of the files where the logs are written to.
     name: filebeat
@@ -397,4 +400,5 @@ logging:
   # Sets log level. The default log level is error.
   # Available log levels are: critical, error, warning, info, debug
   #level: error
+
 
