@@ -266,7 +266,7 @@ output:
   ### Logstash as output
   logstash:
     # The Logstash hosts
-    hosts: ["169.232.194.74:5043"]
+    hosts: ["your_elk_host_ip:5043"]
 
     # Number of workers per Logstash host.
     #worker: 1
@@ -338,7 +338,7 @@ shipper:
   # The tags of the shipper are included in their own field with each
   # transaction published. Tags make it easy to group servers by different
   # logical properties.
-  tags: ["your_elk_host_ip:5043"]
+  tags: ["filebeat_this_client_hostname"]
 
   # Uncomment the following if you want to ignore transactions created
   # by the server on which the shipper is installed. This option is useful

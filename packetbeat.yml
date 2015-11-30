@@ -144,11 +144,11 @@ output:
   logstash:
     enabled: true
 
-    # The list of downstream Logstash servers. 
+    # The list of downstream Logstash servers.
     hosts:
       - your_elk_host_ip:5044
 
-    tls: 
+    tls:
       # The path to your client ssl certificate
       certificate: /etc/filebeat/logstash-beats.crt
       # The path to your client ssl key
@@ -174,7 +174,7 @@ shipper:
   # The tags of the shipper are included in their own field with each
   # transaction published. Tags make it easy to group servers by different
   # logical properties.
-  tags: ["packetbeat_eye.iso.ucla.edu"]
+  tags: ["packetbeat_this_client_hostname"]
 
   # Uncomment the following if you want to ignore transactions created
   # by the server on which the shipper is installed. This option is useful
