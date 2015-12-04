@@ -144,11 +144,11 @@ output:
   logstash:
     enabled: true
 
-    # The list of downstream Logstash servers. 
+    # The list of downstream Logstash servers.
     hosts:
       - your_elk_host_ip:5044
 
-    tls: 
+    tls:
       # The path to your client ssl certificate
       certificate: /etc/filebeat/logstash-beats.crt
       # The path to your client ssl key
