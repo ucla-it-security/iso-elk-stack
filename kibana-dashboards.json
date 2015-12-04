@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "HTTP",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "HTTP",
+      "panelsJSON": "[{\"col\":4,\"id\":\"Web-transactions\",\"row\":1,\"size_x\":9,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"HTTP-error-codes\",\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"HTTP-error-codes-evolution\",\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Total-number-of-HTTP-transactions\",\"row\":5,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"HTTP-codes-for-the-top-queries\",\"row\":5,\"size_x\":9,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Top-10-HTTP-requests\",\"type\":\"visualization\",\"size_x\":12,\"size_y\":5,\"col\":1,\"row\":11}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "MongoDB-performance",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "MongoDB performance",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"MongoDB-errors\",\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"MongoDB-commands\",\"row\":1,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"MongoDB-errors-per-collection\",\"row\":5,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"MongoDB-in-slash-out-throughput\",\"row\":5,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"MongoDB-response-times-by-collection\",\"row\":8,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Top-slowest-MongoDB-queries\",\"row\":8,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"Number-of-MongoDB-transactions-with-writeConcern-w-equal-0\",\"type\":\"visualization\",\"size_x\":4,\"size_y\":3,\"col\":9,\"row\":5}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "MySQL-performance",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "MySQL performance",
+      "panelsJSON": "[{\"col\":4,\"id\":\"MySQL-Errors\",\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"MySQL-Methods\",\"row\":1,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"MySQL-throughput\",\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Most-frequent-MySQL-queries\",\"row\":11,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Slowest-MySQL-queries\",\"row\":11,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Mysql-response-times-percentiles\",\"row\":5,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"MySQL-Reads-vs-Writes\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":8}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Packetbeat-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "Packetbeat Dashboard",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Web-transactions\",\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"DB-transactions\",\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Cache-transactions\",\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"RPC-transactions\",\"row\":5,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Response-times-percentiles\",\"row\":10,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Errors-count-over-time\",\"row\":13,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Errors-vs-successful-transactions\",\"row\":10,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Latency-histogram\",\"row\":13,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Client-locations\",\"row\":1,\"size_x\":9,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Response-times-repartition\",\"row\":7,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Navigation\",\"type\":\"visualization\",\"size_x\":3,\"size_y\":4,\"col\":1,\"row\":1}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "PgSQL-performance",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "PgSQL performance",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"PgSQL-Errors\",\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"PgSQL-Methods\",\"row\":1,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PgSQL-response-times-percentiles\",\"row\":5,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"PgSQL-throughput\",\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PgSQL-Reads-vs-Writes\",\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Most-frequent-PgSQL-queries\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":6,\"col\":1,\"row\":11},{\"id\":\"Slowest-PgSQL-queries\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":6,\"col\":7,\"row\":11}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Thrift-performance",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeRestore": false,
+      "description": "",
+      "title": "Thrift performance",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Thrift-requests-per-minute\",\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Thrift-RPC-Errors\",\"row\":1,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Slowest-Thrift-RPC-methods\",\"row\":5,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Thrift-response-times-percentiles\",\"row\":5,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Top-Thrift-RPC-methods\",\"row\":8,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Top-Thrift-RPC-calls-with-errors\",\"row\":8,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"Thrift-transactions\",\"type\":\"search\",\"size_x\":12,\"size_y\":8,\"col\":1,\"row\":12,\"columns\":[\"method\",\"type\",\"path\",\"responsetime\",\"status\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Topbeat-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "hits": 0,
+      "timeFrom": "now-15m",
+      "timeRestore": true,
+      "description": "",
+      "title": "Topbeat-Dashboard",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Navigation\",\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"System-load\",\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Disk-usage-overview\",\"row\":1,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Process-status\",\"row\":5,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Memory-usage\",\"row\":9,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Disk-usage\",\"row\":13,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CPU-usage\",\"row\":9,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CPU-usage-per-process\",\"row\":17,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Memory-usage-per-process\",\"row\":13,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Top-processes\",\"row\":17,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Servers\",\"row\":5,\"size_x\":7,\"size_y\":4,\"type\":\"visualization\"}]",
+      "timeTo": "now",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Dashboard:-Linux-User-and-Group-Events",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Dashboard: Linux User and Group Events",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Visualization:-Linux-(New-User)\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Visualization:-Linux-(New-Group)\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Visualization:-Linux-(Password-Change)\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"Visualization:-Linux-(User-Deleted)\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Linux-(Group-Deleted)\",\"panelIndex\":5,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"pam_username\",\"tags\",\"pam_message\",\"message\"],\"id\":\"Linux:-User-and-Group-Events\",\"panelIndex\":6,\"row\":5,\"size_x\":12,\"size_y\":4,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"id\":\"Visualization:-Bar-Chart-(Linux:-User-and-Group-Events)\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":12,\"size_y\":5,\"col\":1,\"row\":9}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  }
+]
