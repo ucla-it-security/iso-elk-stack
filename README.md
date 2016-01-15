@@ -13,5 +13,7 @@ As of January 14th, 2016, (and after a long period of stability testing), shippi
 **Future Changes**:
 
 -Official netflow support instructions
+
 -OSSEC configuration instructions
+
 -More dashboards
