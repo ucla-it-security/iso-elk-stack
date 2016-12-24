@@ -1,3 +1,6 @@
+# ELK Stack 5.0
+**In recent months, the most technically skilled employees of the UCLA Information Security Office have departed. This project will soon be transitioning to a new UCLA repo, under which a new security-focused ELK stack v5.0 will be launched.**
+
 # iso-elk-stack
 
 The UCLA Information Security Office customized an integration of Logstash, Elasticsearch, and Kibana (the "ELK stack") to extract security-specific information, richly visualize that data, and create notifications based on specific concerns. 
